@@ -180,6 +180,26 @@ table.rows td.act{white-space:nowrap;text-align:center;padding:0 4px}
 .sheet{
   background:#fff;width:210mm;min-height:297mm;padding:9mm 8mm;border:1px solid var(--rule);
   color:#000;font-family:Arial,Helvetica,sans-serif;
+  position:relative;
+}
+.sheet::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('watermark.png');
+  background-size: 70%;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.15;
+  z-index: 0;
+  pointer-events: none;
+}
+.sheet > * {
+  position: relative;
+  z-index: 1;
 }
 .sheet .logo{width:100%;display:block;margin:0 auto 2px}
 .sheet .addr{text-align:center;font-weight:700;font-size:8.5pt;border:1px solid #000;padding:3px;margin-top:2px}
